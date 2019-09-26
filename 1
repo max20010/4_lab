@@ -1,0 +1,36 @@
+
+#include "stdafx.h"
+#include "iostream"
+using namespace std;
+
+
+int main()
+{
+	setlocale(LC_ALL, "ru");
+	int x,n=0,s=0,m=1;
+	cin >> x;
+	int *a = new int[x];
+	for (int i = 0; i < x; i++){
+		cin >> a[i];
+	}
+	for (int i = 0; i < x; i++){
+		if (a[i] % 2 != 0){
+			n++;
+			s += a[i];
+			m *= a[i];
+		}
+	}
+	if (n == 0){
+		cout << "В массиве нет нечетных чисел" << endl;
+	}
+	else
+	{
+		cout << "Колчество нечетных чисел: " << n << endl;
+		cout << "Сумма нечетных чисел: " << s << endl;
+		cout << "Произведение нечетных чисел: " << m << endl;
+	}
+	
+	delete[] a;
+	return 0;
+}
+
